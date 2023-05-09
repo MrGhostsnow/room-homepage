@@ -75,7 +75,7 @@ export const Sliders = styled.div`
     }
 
     @media screen and (max-width: 542px){
-        bottom: 14.4rem;
+        bottom: 32.2rem;
     }
 `;
 

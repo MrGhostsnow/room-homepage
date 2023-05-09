@@ -3,12 +3,20 @@ import {
     Title,
     SectionOptions,
     Options,
-    SectionMobile
+    SectionMobile,
+    Icon,
+    Overlay,
+    SectionOptionsMobile,
+    OptionsMobile
 } from './styles'
+import Hamburger from '../../assets/icon-hamburger.svg'
+import Close from '../../assets/icon-close.svg'
 
 import { useState, useEffect } from 'react'
 
 function NavBar() {
+
+    const [showNavBar, setShowNavBar] = useState(false)
 
     const [width, setWidth] = useState(window.innerWidth);
 
@@ -36,9 +44,24 @@ function NavBar() {
                     </SectionOptions>
                 </>
             ) :
-                <SectionMobile>
-                    <Title>room</Title>
-                </SectionMobile>
+                <>
+                    {!showNavBar ? (
+                        <SectionMobile>
+                            <Icon onClick={() => setShowNavBar(true)} src={Hamburger} alt='' />
+                            <Title>room</Title>
+                        </SectionMobile>
+                    ) : (
+                        <Overlay>
+                            <SectionOptionsMobile>
+                                <Icon onClick={() => setShowNavBar(false)} src={Close} alt='' />
+                                <OptionsMobile>home</OptionsMobile>
+                                <OptionsMobile>shop</OptionsMobile>
+                                <OptionsMobile>about</OptionsMobile>
+                                <OptionsMobile>contact</OptionsMobile>
+                            </SectionOptionsMobile>
+                        </Overlay>
+                    )}
+                </>
             }
         </ContainerNav>
     )
