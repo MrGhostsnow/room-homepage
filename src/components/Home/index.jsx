@@ -26,7 +26,7 @@ import ArrowNext from '../../assets/icon-angle-right.svg'
 import FirstImageDark from '../../assets/image-about-dark.jpg'
 import SecondImageLight from '../../assets/image-about-light.jpg'
 import Arrow from '../../assets/icon-arrow.svg'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import NavBar from '../NavBar'
 
 
@@ -36,13 +36,25 @@ function Home() {
     const [hero2, setHero2] = useState(false)
     const [hero3, setHero3] = useState(false)
 
+    const [width, setWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        function handleResize() {
+            setWidth(window.innerWidth);
+        }
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, [width]);
+
+    const mobile = (width <= 542);
+
     return (
         <ContainerHome>
             <SectionHeader>
                 <NavBar />
                 {hero1 && (
                     <>
-                        <SectionImage src={Hero1} height={600} />
+                        <SectionImage src={Hero1} height={!mobile ? (600) : (300)} />
                         <SectionText>
                             <Title>Discover innovative ways to decorate</Title>
                             <Label>We provide unmatched quality, comfort, and style for property owners across the country. Our experts combine form and function in bringing
@@ -70,7 +82,7 @@ function Home() {
                 )}
                 {hero2 && (
                     <>
-                        <SectionImage src={Hero2} height={600} />
+                        <SectionImage src={Hero2} height={!mobile ? (600) : (300)} />
                         <SectionText>
                             <Title>We are available all across the globe</Title>
                             <Label>With stores all over the world, it's easy for you to find furniture for your home or place of business.
@@ -98,7 +110,7 @@ function Home() {
                 )}
                 {hero3 && (
                     <>
-                        <SectionImage src={Hero3} height={600} />
+                        <SectionImage src={Hero3} height={!mobile ? (600) : (300)} />
                         <SectionText>
                             <Title>Manufactured with the best materials</Title>
                             <Label>Our modern furniture store provides a high level of quality. Our company has invested in advanced technology to ensure that

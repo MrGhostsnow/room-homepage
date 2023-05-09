@@ -6,11 +6,17 @@ export const ContainerNav = styled.div`
     position: absolute;
     margin-left: 4rem;
     margin-top: 1.5rem;
+
+    @media screen and (max-width: 542px){
+        width: 100%;
+        margin-left: -0.1rem;
+        margin-top: -0.3rem;
+    }
 `;
 
 export const Title = styled.p`
     color: #fff;
-    font-weight: 400;
+    font-weight: 700;
     font-size: 27px;
 `;
 
@@ -25,4 +31,11 @@ export const SectionOptions = styled.ul`
 `;
 
 export const Options = styled.li`
+`;
+
+export const SectionMobile = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `;

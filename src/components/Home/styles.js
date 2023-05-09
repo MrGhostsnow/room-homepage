@@ -4,10 +4,18 @@ export const ContainerHome = styled.div``;
 
 export const SectionHeader = styled.div`
     display: flex;
+
+    @media screen and (max-width: 768px){
+        flex-direction: column;
+    }
 `;
 
 export const SectionImage = styled.img`
     width: 60%;
+
+    @media screen and (max-width: 768px){
+        width: 100%;
+    }
     
 `;
 
@@ -17,6 +25,10 @@ export const SectionText = styled.div`
     justify-content: center;
     align-items: center;
     width: 100%;
+
+    @media screen and (max-width: 768px){
+        height: 400px;
+    }
 `;
 
 export const Title = styled.p`
@@ -43,6 +55,10 @@ export const ButtonShop = styled.button`
     border: none;
     background-color: transparent;
     letter-spacing: 12px;
+    
+    @media screen and (max-width: 768px){
+        width: 54%;
+    }
 `;
 
 export const Sliders = styled.div`
@@ -53,6 +69,14 @@ export const Sliders = styled.div`
     bottom: 13.4rem;
     right: 27.5rem;
     width: 137px;
+
+    @media screen and (max-width: 768px){
+        right: 0rem;
+    }
+
+    @media screen and (max-width: 542px){
+        bottom: 14.4rem;
+    }
 `;
 
 export const SectionSlider = styled.div`
@@ -75,6 +99,11 @@ export const SliderPrev = styled.img`
 
 export const SectionBellow = styled.div`
     display: flex;
+
+
+    @media screen and (max-width: 1024px){
+        flex-direction: column;
+    }
 `;
 
 export const FirstImage = styled.img``;
@@ -85,6 +114,11 @@ export const Text = styled.div`
     justify-content: center;
     align-items: center;
     width: 100%;
+
+    @media screen and (max-width: 768px){
+        height: 300px;
+    }
+
 `;
 
 export const TitleBellow = styled.p`
@@ -93,6 +127,10 @@ export const TitleBellow = styled.p`
     width: 450px;
     text-align: left;
     margin-bottom: 0;
+
+    @media screen and (max-width: 542px){
+        width: 400px;
+    }
 `;
 
 export const LabelBellow = styled.p`
@@ -102,6 +140,10 @@ export const LabelBellow = styled.p`
     text-align: left;
     color: hsl(0, 0%, 63%);
     line-height: 20px;
+
+    @media screen and (max-width: 542px){
+        width: 400px;
+    }
 `;
 
 export const SecondImage = styled.img``;
